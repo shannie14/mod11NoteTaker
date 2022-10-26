@@ -12,6 +12,9 @@ if (window.location.pathname === '/notes') {
   noteList = document.querySelectorAll('.list-container .list-group');
 }
 
+// activeNote is used to keep track of the note in the textarea
+let activeNote = {};
+
 // Show an element
 const show = (elem) => {
   elem.style.display = 'inline';
@@ -21,9 +24,6 @@ const show = (elem) => {
 const hide = (elem) => {
   elem.style.display = 'none';
 };
-
-// activeNote is used to keep track of the note in the textarea
-let activeNote = {};
 
 const getNotes = () =>
   fetch('/api/notes', {
